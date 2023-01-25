@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'app',
-    'apps.articles.ArticlesConfig',
     "django_apscheduler",
     "django.contrib.admin",
     "django.contrib.auth",

@@ -7,7 +7,3 @@ class AppConfig(AppConfig):
     def ready(self):
         from .cron import main
         main()
-
-class ArticlesConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.articles'
