@@ -24,7 +24,7 @@
       <div class="cg_list">
         <div class="cg_colum_1">
           <li class="column_1">
-            <button> {column_1} </button>
+            <button onclick='to_category("채용")'> 채용 </button>
         </div>
         <div class="cg_colum_2">
           <li class="column_2">
@@ -48,8 +48,9 @@
     <!-- 검색창 -->
     <div class="Search_Zone">
       <div class="Search_box">
-        <form action = '/page2/'>
+        <form action = '/search/'>
         <input class="Search_input" type="text" name = 'key' placeholder="검색어를 입력해주세요">
+        <input type="hidden" name="category" value="all">
         <button class="Search_icon" type="submit">
           <a href="2page.html">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24"
@@ -73,5 +74,9 @@
     <script type="text/javascript" src="{% static '/js/Cg_Zone.js'%}"></script>
   </div>
 </body>
-
+<script>
+  function to_category(name){
+    location.href=`/search/?category=${name}&key=`
+  }
+</script>
 </html>
