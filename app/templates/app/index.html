@@ -65,99 +65,23 @@
         </li>
       </div>
     </div>
-  </div>
-  <!-- style.css -->
-  <div class="serch_bar">
-    <header class="header">
-      <nav>
-        <h1></h1>
-        <form action='/search/'>
-          <div class="Search_Zone">
-            <div class="Search_box">
-              <div class="drop_nav">
-                <select class="select" name="search_period" id='search_period'>
-                  <option value="전체">기간선택</option>
-                  <option value="1주이내">1주이내</option>
-                  <option value="1달이내">1달이내</option>
-                  <option value="1년이내">1년이내</option>
-                  <option value="1년이후">1년이후</option>
-                </select>
-                <select class="select" name="search_mode" style="margin-left: 10px;" id="search_mode">
-                  <option value="title">제목</option>
-                  <option value="content">내용</option>
-                </select>
-              </div>
-              <!-- placeholder = 검색창 바깥 텍스트 -->
-              <!-- autocomplete = 자동완성 기능 관련 명령어 -->
-              <input class="Search_input" type="text" name='key' id="search_key" placeholder="검색어를 입력해주세요"
-                autocomplete='off' />
-
-              <!-- onclick="serchbtn()" 해당 온클릭은 text_area.js 에서 수정 -->
-              <button class="Search_icon" type='submit' onclick="serchbtn()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
-                  height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                  stroke-linecap="round" stroke-linejoin="round" style="color: white;">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <circle cx="10" cy="10" r="7"></circle>
-                  <line x1="21" y1="21" x2="15" y2="15"></line>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </form>
-      </nav>
-    </header>
-
-  </div>
-  <!-- text_area.css -->
-  <div class="text_area" id="door">
-    <div class="main_door">
-      <div class="info">
-        <span>
-          충녕봇 소개
-        </span>
-        <hr />
-        <p class="img" style="line-height: 45px;">
-          세종시 각 기관들의 공지사항을
-          <br> 검색 한 번으로 보실 수 있습니다.
-          <br> 원하는 정보를 찾기 위해
-          <br> 여기저기 돌아다닐 필요없이
-          <br> 이 곳에서 검색해 보세요!
-          <img src="{% static 'gif/충녕이.gif' %}" style="width:100%; height:100%; object-fit:cover;">
-        </p>
-      </div>
-      <div class="search_info_zone">
-        <span>
-          검색창
-        </span>
-        <hr />
-        <p style="font-weight: bold; margin-bottom: -25px;">세부검색 기능 </p>
-        <p style="line-height: 35px;">기간과 제목 또는 <br> 내용 선택 </p>
-      </div>
-      <div class="search_info_category">
-        <span>
-          카테고리
-        </span>
-        <hr />
-        <p style="font-weight: bold; margin-bottom: -25px;"> 상위 검색어 카테고리화</p>
-        <p style="line-height: 35px;"> 가장 많이 올라오는 <br>내용을 카테고리로 나눔</p>
-      </div>
-      <div class="program">
-        <span>
-          개발도구
-        </span>
-        <hr />
-        <p style="margin-bottom: -25px;"> python / django </p>
-        <p style="margin-bottom: -25px;"> html / css / javascript </p>
-        <p style="margin-bottom: -25px;"> notion / aws </p>
-      </div>
-      <div class="developer">
-        <span>
-          개발자
-        </span>
-        <hr />
-        <p style="margin-bottom: -25px;">배찬호 안용상</p>
-        <p style="margin-bottom: -25px;">최준호 선수영 최정웅</p>
+    <!-- 검색창 -->
+    <div class="Search_Zone">
+      <div class="Search_box">
+        <form action = '/page2/'>
+        <input class="Search_input" type="text" name = 'key' placeholder="검색어를 입력해주세요">
+        <button class="Search_icon" type="submit">
+          <a href="2page.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24"
+              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <circle cx="10" cy="10" r="7"></circle>
+              <line x1="21" y1="21" x2="15" y2="15"></line>
+            </svg>
+          </a>
+        </button>
+      </form>
       </div>
     </div>
   </div>
@@ -209,7 +133,11 @@
   <script type="text/javascript" src="{% static '/js/sidebar_click.js'%}"></script>
   <script type="text/javascript" src="{% static '/js/text_area.js'%}"></script>
 </body>
-
+<script>
+  function to_category(name){
+    location.href=`/search/?category=${name}&key=`
+  }
+</script>
 </html>
 <script>
   async function 함수(js_mode, search, key, search_mode, search_period) {

@@ -22,8 +22,12 @@
         <div class="Search_box">
           <form action="/search/">
           <input class="Search_input" type="text" id='search_input' name="key" placeholder="{{key}}" value="{{key}}">
+<<<<<<< HEAD
           <input type="hidden" name="category" value="{{category}}" id="category">
           <input type="hidden" name="mode" value="title" id="category">
+=======
+          <input type="hidden" name="category" value="{{category}}">
+>>>>>>> c9dc42488970bd77d009e4a706fab4731398f6b8
           <input type="checkbox" name="mode" value="content" >
           <button class="Search_icon" type="submit">
           </form>
@@ -93,7 +97,11 @@
       </div>
     </div>
     <div class="result_text" id="search_num">
+<<<<<<< HEAD
       검색중<img src="{% static 'gif/Spinner-1s-200px.gif'%}" >
+=======
+      검색중
+>>>>>>> c9dc42488970bd77d009e4a706fab4731398f6b8
     </div>
     <div class="output">
       <div class="op_list">
@@ -120,10 +128,14 @@
   </div>
 </body>
 <script>
+<<<<<<< HEAD
 if( `{{key}}`!='' & `{{category}}`!='all'){
   console.log(12222)
   console.log(document.getElementById('category'))
 }
+=======
+
+>>>>>>> c9dc42488970bd77d009e4a706fab4731398f6b8
 async function 함수(mode) {
 const list = await 리스트함수(mode);
 console.log(list)
@@ -138,17 +150,25 @@ let cord = ''
   for (record of data.slice(0,10)){
   cord += '<tr>'
     cord+=`<td>${record['article_num']}</td>`
+<<<<<<< HEAD
     cord+=`<td><a href = ${record['href']} target='_blank'>${record['title']}</a></td>`
+=======
+    cord+=`<td><a href = ${record['href']}>${record['title']}</a></td>`
+>>>>>>> c9dc42488970bd77d009e4a706fab4731398f6b8
     cord+=`<td>${record['updated']}</td>`
     cord+=`<td>${record['writer']}</td>`
   cord += '</tr>'
 }
 document.getElementById('tbody').innerHTML = cord
+<<<<<<< HEAD
 document.getElementById('search_num').innerHTML = `<b>{{key}}</b>에 관한 총 ${data.length}건의 검색결과 입니다`
 console.log("{{category}}")
 if ( "{{category}}"){
   document.getElementById('search_num').innerHTML = `<b>{{cate_key}} </b> 카테고리에 관한 총 ${data.length}건의 검색결과 입니다`
 }
+=======
+document.getElementById('search_num').innerHTML = `{{key}}에 관한 총 ${data.length}건의 검색결과 입니다`
+>>>>>>> c9dc42488970bd77d009e4a706fab4731398f6b8
 if (mode=='first'){
     let len = data.length
     if (len > 100){
